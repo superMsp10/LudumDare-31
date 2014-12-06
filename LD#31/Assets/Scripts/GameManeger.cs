@@ -6,8 +6,11 @@ public class GameManeger : MonoBehaviour
 		public Levels[] lev;
 		public Levels startLevel;
 		public Levels currentLev;
+		public GameObject g;
+		public GameObject g2;
 
-		// Use this for initialization
+	
+	// Use this for initialization
 		void Start ()
 		{
 				lev = FindObjectsOfType<Levels> ();
@@ -25,10 +28,32 @@ public class GameManeger : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-	
+				if (Input.GetMouseButton (0)) {
+						Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+						RaycastHit hit;
+						if (Physics.Raycast (ray, out hit, 1000)) {
+
+								GameObject gam = (GameObject)Instantiate (g, hit.point, Quaternion.identity);
+								Entities e = gam.GetComponent<Entities> ();
+								e.thisL = currentLev;
+								e.thisM = this;
+						}
+				}
+
+		if (Input.GetMouseButton (1)) {
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast (ray, out hit, 1000)) {
+				
+				GameObject gam = (GameObject)Instantiate (g2, hit.point, Quaternion.identity);
+				Entities e = gam.GetComponent<Entities> ();
+				e.thisL = currentLev;
+				e.thisM = this;
+			}
 		}
-		
-		public Levels getLevels (int i)
+	}
+	
+	public Levels getLevels (int i)
 		{
 				return lev [i];
 		}

@@ -13,8 +13,19 @@ planned features
 -buy turrets and more knock back guns
 -0 traction
 -cursor has 0 traction
+-buy borbers
+-houses that spwn more items
+
+for sure
+-you have to try to fit objects on the pool
+- they slide you have to use explosins to control them
+-cash in over time
 
 -creat gamemaneger
 -create levels
 -add entities
+
+-add rigidbosies to enmies and physics materials
+-add the money system for counting money
+-add explosion control
 
