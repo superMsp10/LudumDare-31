@@ -29,3 +29,8 @@ for sure
 -add the money system for counting money
 -add explosion control
 
+-start ui
+-unventory ui
+-ui for changing tools
+
+
