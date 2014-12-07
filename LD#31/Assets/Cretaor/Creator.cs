@@ -6,6 +6,7 @@ public class Creator : Entities
 		public int spawnSpeed;
 		public int miss = 10;
 		public int objectV;
+		public float time = 10;
 		public GameObject[] ins;
 		public int spawnAmount;
 		public GameObject target;
@@ -13,7 +14,20 @@ public class Creator : Entities
 		void Start ()
 		{
 				thisL.addC (this);
-				InvokeRepeating ("spwnR", 1, spawnSpeed);
+
+		}
+
+		public void UpdateEntity ()
+		{
+				time -= Time.deltaTime;
+		
+
+				if (time < 1) {
+
+						time = (int)spawnSpeed;
+						spwnR ();
+				}
+
 		
 		}
 

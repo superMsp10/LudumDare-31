@@ -6,9 +6,13 @@ public class GameManeger : MonoBehaviour
 		public Levels[] lev;
 		public Levels startLevel;
 		public Levels currentLev;
+		public GameObject outGameUI;
+		public GameObject inGameUI;
+		public bool inGame = false;
+		public bool showGame = false;
 		public GameObject g;
 		public GameObject g2;
-		public int cash = 200;
+		public Player thisPlay;
 
 	
 		// Use this for initialization
@@ -31,7 +35,7 @@ public class GameManeger : MonoBehaviour
 		{
 				
 
-				if (Input.GetMouseButton (0)) {
+				/*	if (Input.GetMouseButton (0)) {
 						Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 						RaycastHit hit;
 						if (Physics.Raycast (ray, out hit, 1000)) {
@@ -53,7 +57,7 @@ public class GameManeger : MonoBehaviour
 								e.thisL = currentLev;
 								e.thisM = this;
 						}
-				}
+				}*/
 
 
 		}
@@ -83,6 +87,29 @@ public class GameManeger : MonoBehaviour
 				currentLev = l;
 				currentLev.StartLevel ();
 
+		}
+		
+		public void reload ()
+		{
+				Application.LoadLevel (Application.loadedLevelName);
+	
+		}
+		
+		public void changeIn (bool inG)
+		{
+				inGame = inG;
+				if (inG) {
+						outGameUI.SetActive (false);
+						inGameUI.SetActive (true);
+
+				}
+				if (!inG) {
+						inGameUI.SetActive (false);
+						outGameUI.SetActive (true);
+
+				}
+		
+		
 		}
 	
 	

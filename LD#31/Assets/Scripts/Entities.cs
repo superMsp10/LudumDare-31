@@ -32,15 +32,15 @@ public class Entities : MonoBehaviour
 
 
 				if (demD.destroyOnAwake) {
-						Destroy (this.gameObject,demD.awakeDestroyDelay);
+						Destroy (this.gameObject, demD.awakeDestroyDelay);
 				}
 		
 		}
 	
 		// Update is called once per frame
-		void Update ()
+		public void UpdateEntity ()
 		{
-	
+
 		}
 		
 		void OnDestroy ()

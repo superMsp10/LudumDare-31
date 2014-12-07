@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Collector : Entities
 {
@@ -9,18 +10,23 @@ public class Collector : Entities
 		public float radius;
 		public int currentObjects;
 		public bool destroyOnCollect;
+		public Text collecterUI;
 		// Use this for initialization
 		void Start ()
 		{
-				thisL.addEntity (this);
+				thisL.addCol (this);
+
 				
 		}
 	
 		// Update is called once per frame
-		void Update ()
-		{
-				time -= Time.deltaTime;
 
+		
+		public void UpdateEntity ()
+		{
+
+				time -= Time.deltaTime;
+				collecterUI.text = "Time Left : " + ((int)time).ToString ();
 				if (time < 1) {
 						Collider[] c = Physics.OverlapSphere (transform.position, radius, whatMoney);
 						currentObjects = c.Length;
@@ -28,13 +34,16 @@ public class Collector : Entities
 						foreach (Collider ca in c) {
 								if (destroyOnCollect)
 										Destroy (ca.gameObject);
-								thisM.cash += ca.GetComponent<Boxes> ().value;
+								thisM.thisPlay.cash += ca.GetComponent<Boxes> ().value;
 								
 				
 						}
 						time = (int)timerD;
 				}
-		}
+
 
 		
+		}
+
+
 }
