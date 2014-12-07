@@ -5,6 +5,7 @@ public class Levels : MonoBehaviour
 {
 		public GameObject thisCam;
 		public List<Entities> theseE;
+		public List<Creator> theseC;
 
 		// Use this for initialization
 		
@@ -35,5 +36,16 @@ public class Levels : MonoBehaviour
 		public void deleteEntity (Entities en)
 		{
 				theseE.Remove (en);
+		}
+
+		public void addC (Creator en)
+		{
+				theseC.Add (en);
+				en.gameObject.transform.SetParent (transform.FindChild ("Entities"));
+		}
+	
+		public void deleteC (Creator en)
+		{
+				theseC.Remove (en);
 		}
 }

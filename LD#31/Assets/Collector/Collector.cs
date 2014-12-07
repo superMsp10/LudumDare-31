@@ -24,11 +24,12 @@ public class Collector : Entities
 				if (time < 1) {
 						Collider[] c = Physics.OverlapSphere (transform.position, radius, whatMoney);
 						currentObjects = c.Length;
-						if (destroyOnCollect) {
-								foreach (Collider ca in c) {
+					
+						foreach (Collider ca in c) {
+								if (destroyOnCollect)
 										Destroy (ca.gameObject);
-
-								}
+								thisM.cash += ca.GetComponent<Boxes> ().value;
+								
 				
 						}
 						time = (int)timerD;
