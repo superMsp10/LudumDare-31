@@ -10,8 +10,6 @@ public class GameManeger : MonoBehaviour
 		public GameObject inGameUI;
 		public bool inGame = false;
 		public bool showGame = false;
-		public GameObject g;
-		public GameObject g2;
 		public Player thisPlay;
 
 	
@@ -35,29 +33,7 @@ public class GameManeger : MonoBehaviour
 		{
 				
 
-				/*	if (Input.GetMouseButton (0)) {
-						Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-						RaycastHit hit;
-						if (Physics.Raycast (ray, out hit, 1000)) {
-
-								GameObject gam = (GameObject)Instantiate (g, hit.point, Quaternion.identity);
-								Entities e = gam.GetComponent<Entities> ();
-								e.thisL = currentLev;
-								e.thisM = this;
-						}
-				}
 				
-				if (Input.GetMouseButton (1)) {
-						Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-						RaycastHit hit;
-						if (Physics.Raycast (ray, out hit, 1000)) {
-				
-								GameObject gam = (GameObject)Instantiate (g2, hit.point, Quaternion.identity);
-								Entities e = gam.GetComponent<Entities> ();
-								e.thisL = currentLev;
-								e.thisM = this;
-						}
-				}*/
 
 
 		}

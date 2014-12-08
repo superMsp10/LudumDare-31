@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class Levels : MonoBehaviour
 {
+		public GameObject[] Cameras;
 		public GameObject thisCam;
 		public AudioClip[] clips;
 		public AudioSource thisAu;
@@ -19,7 +20,6 @@ public class Levels : MonoBehaviour
 		
 		void Start ()
 		{
-
 
 
 		}
@@ -96,6 +96,19 @@ public class Levels : MonoBehaviour
 		public void deleteCol (Collector en)
 		{
 				theseCol.Remove (en);
+		}
+		
+		public void changeCam (int i)
+		{
+
+					
+				thisCam.SetActive (false);
+				thisCam = Cameras [i];
+				thisCam.SetActive (true);
+
+				
+
+
 		}
 	
 }
