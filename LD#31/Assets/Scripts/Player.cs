@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 		public GameObject defaultO;
 		public Image changeSprite;
 		private GameObject use;
+		public Levels won;
 
 		void Start ()
 		{
@@ -22,7 +23,9 @@ public class Player : MonoBehaviour
 		{
 			
 				if (cash > 2000) {
-
+						thisM.changeLev (won);
+						cash = 0;
+						thisM.inGame = false;
 				}
 				cashUI.text = "Money : $" + cash.ToString ();
 				if (Input.GetMouseButton (1)) {
